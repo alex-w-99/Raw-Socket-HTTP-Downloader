@@ -1,6 +1,8 @@
-# Raw-Socket-Downloader
+# Raw Socket Downloader
 
 ...
+
+Tested on Ubuntu 20.04.1.
 
 ## Items to Note When Using Program
 
@@ -12,7 +14,7 @@
 
 ## Areas for Future Improvement
 
-...
+- [ ] ...
 
 ## Program Demo (Screenshots & Video)
 
@@ -24,4 +26,5 @@
 
 ## Contact Information
 
-...
+- Alexander Wilcox
+- Email: alexander.w.wilcox@gmail.com
