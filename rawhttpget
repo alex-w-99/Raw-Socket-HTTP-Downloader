@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+
+import os
+import utils
+from RawSockets import RawSockets
+
+def main():
+    """
+    Purpose: Program entry point.
+    :return: Void.
+    """
+    #1. Adding rule to iptables to drop outgoing TCP RST packets:
+    os.system("sudo iptables -A OUTPUT -p tcp --tcp-flags RST RST -j DROP")
+
+    # 2. Getting command line arguments:
+    URL = utils.getCommandLineArguments() # "http://david.choffnes.com/classes/cs5700f22/10MB.log"
+ 
+    # 3. Instantiate RawSockets object:
+    raw_sockets = RawSockets(URL)
+
+    # 4. Conduct three-way handshake with the server:
+    raw_sockets.initThreeWayHandshake()
+
+    # 5. Request data from the server via an HTTP GET request:
+    fragmented_data_dict = raw_sockets.sendReceiveHttpGetRequest()
+
+    # 6. Close the raw sockets:
+    raw_sockets.closeSockets()
+
+    # 7. Write data in fragmented_data_dict to local file:
+    utils.writePacketDataToFile(URL, fragmented_data_dict)
+   
+
+if __name__ == "__main__":
+    main()
