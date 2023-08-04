@@ -47,4 +47,4 @@ The following includes instructions for configuring your system to use this prog
 ## Contact Information
 
 - Alexander Wilcox
-- Email: alexander.w.wilcox@gmail.com
+- Email: alexander.w.wilcox [at] gmail.com
